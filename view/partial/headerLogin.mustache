@@ -1,0 +1,55 @@
+<div class="w3-row" id="contact">
+    <div class="w3-half w3-indigo w3-container " style="height:700px">
+        <div class="w3-padding-64 w3-padding-large">
+            <h1>Registro</h1>
+            <p class="w3-opacity">REGISTRO DE DATOS</p>
+            <form class="w3-container w3-card w3-padding-32 w3-white" action="login/register"  metthod = "POST">
+                <div class="w3-section">
+                    <label>Nombre</label>
+                    <input class="w3-input" style="width:100%;" type="text" required name="Nombre">
+                </div>
+                <div class="w3-section">
+                    <label>Apellido</label>
+                    <input class="w3-input" style="width:100%;" type="text" required name="Apellido">
+                </div>
+                <div class="w3-section">
+                    <label>UserName</label>
+                    <input class="w3-input" style="width:100%;" type="text" required name="name">
+                </div>
+                <div class="w3-section">
+                    <label>Password</label>
+                    <input class="w3-input" style="width:100%;" type="password" required name="password">
+                </div>
+                <div class="w3-section">
+                    <label>Confirma Password</label>
+                    <input class="w3-input" style="width:100%;" type="password" required name="ConfirmaPassword">
+                </div>
+                <button type="submit" class="w3-button w3-teal w3-right">Registrarme</button>
+                {{#resultado}}
+                    <br>
+                    {{resultado}}
+                    <br>
+                {{/resultado}}
+            </form>
+
+        </div>
+
+    </div>
+    <div class="w3-half w3-teal w3-container" style="height:700px">
+        <div class="w3-padding-64 w3-padding-large">
+            <h1>Login</h1>
+            <p class="w3-opacity">INGRESO DE DATOS</p>
+            <form class="w3-container w3-card w3-padding-32 w3-white" action="Login/login"  method = "POST">
+                <div class="w3-section">
+                    <label>Username</label>
+                    <input class="w3-input" style="width:100%;" type="text" required name="Name" id="Name">
+                </div>
+                <div class="w3-section">
+                    <label>Password</label>
+                    <input class="w3-input" style="width:100%;" type="password" required name="Password" id="Password">
+                </div>
+                <button type="submit" class="w3-button w3-teal w3-right">Sign In</button>
+            </form>
+        </div>
+    </div>
+</div>
