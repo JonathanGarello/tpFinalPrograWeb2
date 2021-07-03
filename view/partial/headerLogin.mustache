@@ -4,39 +4,33 @@
 
             <h1>Registro</h1>
             <p class="w3-opacity">REGISTRO DE DATOS</p>
-            <form class="w3-container w3-card w3-padding-32 w3-white" action="login/validarRegistro"  metthod = "POST">
+            <form class="w3-container w3-card w3-padding-32 w3-white" action="Login/validarRegistro"  method = "POST">
                 <div class="w3-section">
                     <label>Nombre</label>
-                    <input class="w3-input" style="width:100%;" type="text" required name="nombre" id = "nombre">
+                    <input class="w3-input" style="width:100%;" type="text" required name="nombre">
                 </div>
                 <div class="w3-section">
                     <label>Apellido</label>
-                    <input class="w3-input" style="width:100%;" type="text" required name="apellido" id = "apellido">
+                    <input class="w3-input" style="width:100%;" type="text" required name="apellido">
                 </div>
                 <div class="w3-section">
                     <label>UserName</label>
-                    <input class="w3-input" style="width:100%;" type="text" required name="username" id = "username">
+                    <input class="w3-input" style="width:100%;" type="text" required name="username">
                 </div>
                 <div class="w3-section">
                     <label>Password</label>
-                    <input class="w3-input" style="width:100%;" type="password" required name="contra" id="contra">
+                    <input class="w3-input" style="width:100%;" type="password" required name="contra">
                 </div>
                 <div class="w3-section">
                     <label>Confirma Password</label>
                     <input class="w3-input" style="width:100%;" type="password" required name="confirmaPassword">
                 </div>
                 <button type="submit" class="w3-button w3-teal w3-right">Registrarme</button>
-                {{#mensaje}}
+                {{#datos}}
                     <br>
-                    {{mensaje}}
+                    {{datos}}
                     <br>
-                {{/mensaje}}
-                {{#error2}}
-                    <br>
-                    {{error2}}
-                    <br>
-                {{/error2}}
-
+                {{/datos}}
             </form>
 
         </div>
@@ -49,11 +43,11 @@
             <form class="w3-container w3-card w3-padding-32 w3-white" action="Login/login"  method = "POST">
                 <div class="w3-section">
                     <label>Username</label>
-                    <input class="w3-input" style="width:100%;" type="text" required name="Name" id="Name">
+                    <input class="w3-input" style="width:100%;" type="text" required name="loginNombre" id="loginNombre">
                 </div>
                 <div class="w3-section">
                     <label>Password</label>
-                    <input class="w3-input" style="width:100%;" type="password" required name="Password" id="Password">
+                    <input class="w3-input" style="width:100%;" type="password" required name="loginPassword" id="loginPassword">
                 </div>
                 <button type="submit" class="w3-button w3-teal w3-right">Sign In</button>
                 {{#error}}
@@ -61,6 +55,11 @@
                     {{error}}
                     <br>
                 {{/error}}
+                {{#error2}}
+                    <br>
+                    {{error2}}
+                    <br>
+                {{/error2}}
             </form>
         </div>
     </div>

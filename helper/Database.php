@@ -17,7 +17,9 @@ class Database{
             return "error";
         }
     }
-
+    public function query2($sql){
+        $result=mysqli_query($this->connexion,$sql);
+    }
     public function __destruct(){
         mysqli_close($this->connexion);
     }

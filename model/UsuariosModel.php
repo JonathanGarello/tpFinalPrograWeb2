@@ -24,8 +24,7 @@ class UsuariosModel{
     {
         return $this->connexion->query("SELECT rol FROM usuarios WHERE username = '$username'");
     }
-
     public function registrarUsuario($nombre, $apellido, $username,$password){
-        $this->connexion->query("INSERT INTO usuarios (nombre, apellido, username, contra, rol) VALUES ('a', 's', 'ame','hola','chofer')");
+        $this->connexion->query2("INSERT INTO usuarios (nombre, apellido, username, contra, rol) VALUES ('$nombre', '$apellido', '$username', '$password', null)");
     }
 }
