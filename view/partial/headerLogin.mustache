@@ -1,9 +1,10 @@
 <div class="w3-row" id="contact">
     <div class="w3-half w3-indigo w3-container " style="height:700px">
         <div class="w3-padding-64 w3-padding-large">
+
             <h1>Registro</h1>
             <p class="w3-opacity">REGISTRO DE DATOS</p>
-            <form class="w3-container w3-card w3-padding-32 w3-white" action="login/register"  metthod = "POST">
+            <form class="w3-container w3-card w3-padding-32 w3-white" action="login/registrar"  metthod = "POST">
                 <div class="w3-section">
                     <label>Nombre</label>
                     <input class="w3-input" style="width:100%;" type="text" required name="Nombre">
@@ -25,11 +26,7 @@
                     <input class="w3-input" style="width:100%;" type="password" required name="ConfirmaPassword">
                 </div>
                 <button type="submit" class="w3-button w3-teal w3-right">Registrarme</button>
-                {{#resultado}}
-                    <br>
-                    {{resultado}}
-                    <br>
-                {{/resultado}}
+
             </form>
 
         </div>
@@ -49,6 +46,11 @@
                     <input class="w3-input" style="width:100%;" type="password" required name="Password" id="Password">
                 </div>
                 <button type="submit" class="w3-button w3-teal w3-right">Sign In</button>
+                {{#error}}
+                    <br>
+                    {{error}}
+                    <br>
+                {{/error}}
             </form>
         </div>
     </div>

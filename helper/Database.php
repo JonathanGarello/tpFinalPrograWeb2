@@ -10,11 +10,12 @@ class Database{
     }
 
     public function query($sql){
-        $result = mysqli_query($this->connexion, $sql);
-
-        $resultAsAssocArray = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-        return $resultAsAssocArray;
+        $result=mysqli_query($this->connexion,$sql);
+        if($result == true){
+            return mysqli_fetch_array($result,MYSQLI_ASSOC);
+        }else{
+            return "error";
+        }
     }
 
     public function __destruct(){

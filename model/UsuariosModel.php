@@ -12,13 +12,17 @@ class UsuariosModel{
         return $this->connexion->query("SELECT * FROM usuarios");
     }
     public function obtenerUsuariosPorId($id){
-        return $this->connexion->query("SELECT * FROM usuarios WHERE id = $id ");
+        return $this->connexion->query("SELECT * FROM usuarios WHERE id=$id");
     }
-    public function logIn($username,$password){
-        return $this->connexion->query("SELECT * FROM usuarios WHERE username = $username AND contra = $password");
+    public function obtenerUsuariosPorusername($username){
+        return $this->connexion->query("SELECT * FROM usuarios WHERE username= '$username'");
     }
-    public function register($nombre){
-        $this->connexion->query("INSERT INTO usuarios VALUES($nombre)");
+    public function validarLogin($username,$password){
+        return $this->connexion->query("SELECT * FROM usuarios WHERE username = '$username' AND contra = '$password'");
+    }
+    public function obtenerRolDelUsuario($username)
+    {
+        return $this->connexion->query("SELECT rol FROM usuarios WHERE username = '$username'");
     }
 
 
