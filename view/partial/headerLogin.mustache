@@ -4,28 +4,38 @@
 
             <h1>Registro</h1>
             <p class="w3-opacity">REGISTRO DE DATOS</p>
-            <form class="w3-container w3-card w3-padding-32 w3-white" action="login/registrar"  metthod = "POST">
+            <form class="w3-container w3-card w3-padding-32 w3-white" action="login/validarRegistro"  metthod = "POST">
                 <div class="w3-section">
                     <label>Nombre</label>
-                    <input class="w3-input" style="width:100%;" type="text" required name="Nombre">
+                    <input class="w3-input" style="width:100%;" type="text" required name="nombre" id = "nombre">
                 </div>
                 <div class="w3-section">
                     <label>Apellido</label>
-                    <input class="w3-input" style="width:100%;" type="text" required name="Apellido">
+                    <input class="w3-input" style="width:100%;" type="text" required name="apellido" id = "apellido">
                 </div>
                 <div class="w3-section">
                     <label>UserName</label>
-                    <input class="w3-input" style="width:100%;" type="text" required name="name">
+                    <input class="w3-input" style="width:100%;" type="text" required name="username" id = "username">
                 </div>
                 <div class="w3-section">
                     <label>Password</label>
-                    <input class="w3-input" style="width:100%;" type="password" required name="password">
+                    <input class="w3-input" style="width:100%;" type="password" required name="contra" id="contra">
                 </div>
                 <div class="w3-section">
                     <label>Confirma Password</label>
-                    <input class="w3-input" style="width:100%;" type="password" required name="ConfirmaPassword">
+                    <input class="w3-input" style="width:100%;" type="password" required name="confirmaPassword">
                 </div>
                 <button type="submit" class="w3-button w3-teal w3-right">Registrarme</button>
+                {{#mensaje}}
+                    <br>
+                    {{mensaje}}
+                    <br>
+                {{/mensaje}}
+                {{#error2}}
+                    <br>
+                    {{error2}}
+                    <br>
+                {{/error2}}
 
             </form>
 

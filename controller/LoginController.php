@@ -19,7 +19,7 @@
         {
             $username = $_POST["Name"];
             $password = $_POST["Password"];
-            $data = $this->model->obtenerRolDelUsuario('admin');
+            $data = $this->model->obtenerRolDelUsuario($username);
             $Datos["error"] ="Usuario Inexistente";
             $Datos["usuario"] =$username;
             $login = $this->model->validarLogin($username , $password);
@@ -46,10 +46,31 @@
 
         }
 
-        function logout()
+        public function logout()
         {
             session_destroy();
             Header("Location: ../view/login.php");
+        }
+
+        public function validarRegistro(){
+            $nombre = $_POST['nombre'];
+            $apellido  = $_POST['apellido'];
+            $username = $_POST['username'];
+            $password  = $_POST['contra'];
+            $confirmaPassword  = $_POST['confirmaPassword'];
+            if($password == $confirmaPassword){
+                $data = $this->model->obtenerUsuariosPorusername($username);
+                if($data == null){
+                    $this->model->registrarUsuario("a", "s", "ame","hola");
+                    $model['mensaje'] = $nombre . $apellido.$username.$password;
+                    echo $this->renderer->render( "view/login.php", $model);
+                }else {
+                    $model['error2'] = "Usuario existente";
+                }
+            }else {
+                $model['error2'] = "Las claves no coinciden";
+                echo $this->renderer->render("view/login.php", $model);
+            }
         }
 
     }
