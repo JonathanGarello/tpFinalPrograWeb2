@@ -64,30 +64,4 @@
             session_destroy();
             Header("Location: ../view/login.php");
         }
-
-        public function validarRegistro()
-        {
-            $nombre = "";
-            $apellido = "";
-            $username = "";
-            $password = "";
-            $confirmaPassword = "";
-            if (isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["username"])) {
-                if (isset($_POST["contra"]) && isset($_POST["confirmaPassword"])) {
-                    $nombre = $_POST["nombre"];
-                    $apellido = $_POST["apellido"];
-                    $username = $_POST["username"];
-                    $password = $_POST["contra"];
-                    $confirmaPassword = $_POST["confirmaPassword"];
-                }
-            }
-            $data = $this->model->obtenerUsuariosPorusername($username);
-            if($password == $confirmaPassword && $data == null){
-                $model["datos"] =  "Usuario Registrado";
-                $ingreso=$this->model->registrarUsuario($nombre, $apellido,$username,$password);
-            }else{
-                $model["datos"] =  "Falla de Registro";
-            }
-            echo $this->renderer->render("view/login.php", $model);
-        }
     }

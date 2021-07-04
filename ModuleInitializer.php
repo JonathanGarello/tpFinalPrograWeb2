@@ -27,6 +27,15 @@ class ModuleInitializer
         return new LoginController($this->renderer,$model);
     }
 
+    public function createRegistrarController()
+    {
+
+        include_once("controller/RegistrarController.php");
+        include_once("model/UsuariosModel.php");
+        $model = new UsuariosModel($this->database);
+        return new RegistrarController($this->renderer,$model);
+    }
+
     public function createPrincipalController()
     {
 

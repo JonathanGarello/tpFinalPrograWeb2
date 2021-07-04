@@ -32,6 +32,4 @@ class PrincipalController
         $darRoles = $this->model->darRol($id,$nombre,$apellido,$username,$password,$rol);
         echo $this->renderer->render("view/principal.php",$usuariosSinRol);
     }
-
-
 }
