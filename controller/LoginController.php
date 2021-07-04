@@ -25,7 +25,10 @@
                     $password = $_POST["loginPassword"];
                 }
             }
-            $data = $this->model->obtenerRolDelUsuario($_POST["loginNombre"]);
+            $data= array();
+            if (isset($_POST["loginNombre"])) {
+                $data = $this->model->obtenerRolDelUsuario($_POST["loginNombre"]);
+            }
             $login = $this->model->validarLogin($username, $password);
             if ($login != null) {
                 if ($data["rol"] == 'admin') {
