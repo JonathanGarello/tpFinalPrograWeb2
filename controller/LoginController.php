@@ -26,12 +26,12 @@
                 }
             }
             $data = $this->model->obtenerRolDelUsuario($_POST["loginNombre"]);
-            $Datos["usuario"] = $_POST["loginNombre"];
             $login = $this->model->validarLogin($username, $password);
             if ($login != null) {
                 if ($data["rol"] == 'admin') {
                     session_start();
-                    echo $this->renderer->render("view/principal.php", $Datos);
+                    $usuariosSinRol["usuarios"] = $this->model->obtenerUsuariosConRolNull();
+                    echo $this->renderer->render("view/principal.php", $usuariosSinRol);
                 }
 
                 if ($data["rol"] == 'chofer') {
@@ -45,7 +45,7 @@
                 if ($data["rol"] == 'encargado') {
 
                 }
-                if ($data["rol"] == null) {
+                if ($data["rol"] == 'null') {
                     $Datos["error2"] = "Usuario Sin Rol";
                     echo $this->renderer->render("view/login.php", $Datos);
                 }

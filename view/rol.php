@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+    html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
 <body class="w3-light-grey">
 
@@ -73,10 +73,29 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         </div>
     </div>
 
+    <div class="w3-panel">
+        <h1>Determine Rol</h1>
+        {{#usuarios}}
+        <form action="/principal/darRol" method="POST">
+            <input id="id" name="id" type="hidden" value={{id}}>
+            <input id="nombre" name="nombre" type="hidden" value={{nombre}}>
+            <input id="apellido" name="apellido" type="hidden" value={{apellido}}>
+            <input id="username" name="username" type="hidden" value={{username}}>
+            <input id="contra" name="contra" type="hidden" value={{contra}}>
+              <input type="radio" id="chofer" name="language" value="chofer">
+              <label for="chofer">chofer</label><br>
+              <input type="radio" id="supervisor" name="language" value="supervisor" checked="checked">
+              <label for="supervisor">supervisor</label><br>
+              <input type="radio" id="encargado" name="language" value="encargado">
+              <label for="encargado">encargado</label><br><br>
+            <input type="submit" value="Cargar">
+        </form>
+        {{/usuarios}}
+</body>
+</html>
+    </div>
 
-    {{> tablePrincipal}}
-
-<!-- End page content -->
+    <!-- End page content -->
 </div>
 
 {{> finalPrincipal}}
