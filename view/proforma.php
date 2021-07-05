@@ -1,6 +1,6 @@
 {{>headerAdmin}}
 <div class="w3-row" id="contact">
-    <div class="w3-half w3-indigo w3-container " style="height:700px">
+    <div class="w3-indigo w3-container " style="height:700px">
         <div class="w3-padding-64 w3-padding-large">
             <h1>PROFORMA</h1>
             <p class="w3-opacity">REGISTRO DE DATOS</p>
