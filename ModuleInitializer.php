@@ -36,13 +36,22 @@ class ModuleInitializer
         return new RegistrarController($this->renderer,$model);
     }
 
-    public function createPrincipalController()
+    public function createAdminController()
     {
 
-        include_once("controller/PrincipalController.php");
+        include_once("controller/AdminController.php");
         include_once("model/UsuariosModel.php");
         $model = new UsuariosModel($this->database);
-        return new PrincipalController($this->renderer,$model);
+        return new AdminController($this->renderer,$model);
+    }
+
+    public function createProformaController()
+    {
+
+        include_once("controller/ProformaController.php");
+        include_once("model/UsuariosModel.php");
+        $model = new UsuariosModel($this->database);
+        return new ProformaController($this->renderer,$model);
     }
 
     public function createDefaultController()

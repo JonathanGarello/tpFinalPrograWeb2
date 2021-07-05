@@ -15,7 +15,7 @@
             echo $this->renderer->render("view/login.php");
         }
 
-        public function login()
+        public function procesarLogin()
         {
             $username = "";
             $password = "";
@@ -34,7 +34,7 @@
                 if ($data["rol"] == 'admin') {
                     session_start();
                     $usuariosSinRol["usuarios"] = $this->model->obtenerUsuariosConRolNull();
-                    echo $this->renderer->render("view/principal.php", $usuariosSinRol);
+                    echo $this->renderer->render("view/admin.php", $usuariosSinRol);
                 }
 
                 if ($data["rol"] == 'chofer') {
@@ -42,7 +42,8 @@
                 }
 
                 if ($data["rol"] == 'supervisor') {
-
+                    session_start();
+                    echo $this->renderer->render("view/supervisor.php");
                 }
 
                 if ($data["rol"] == 'encargado') {
@@ -62,6 +63,6 @@
         public function logout()
         {
             session_destroy();
-            Header("Location: ../view/login.php");
+            Header("Location:../");
         }
     }

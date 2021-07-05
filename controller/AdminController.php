@@ -1,6 +1,6 @@
 <?php
 
-class PrincipalController
+class AdminController
 {
     private $renderer;
     private $model;
@@ -14,7 +14,7 @@ class PrincipalController
     public function index()
     {
         $data["usuarios"] = $this->model->obtenerUsuarios();
-        echo $this->renderer->render("view/principal.php", $data);
+        echo $this->renderer->render("view/admin.php", $data);
     }
     public function verRoles(){
         $id = $_GET["id"];
@@ -28,8 +28,7 @@ class PrincipalController
         $apellido = $_POST["apellido"];
         $username = $_POST["username"];
         $password = $_POST["contra"];
-        $usuariosSinRol["usuarios"] = $this->model->obtenerUsuariosConRolNull();
         $darRoles = $this->model->darRol($id,$nombre,$apellido,$username,$password,$rol);
-        echo $this->renderer->render("view/principal.php",$usuariosSinRol);
+        echo $this->renderer->render("view/admin.php",$usuariosSinRol);
     }
 }
