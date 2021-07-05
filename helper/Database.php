@@ -9,7 +9,7 @@ class Database{
                 or die("Connection failed: " . mysqli_connect_error());
     }
 
-    public function query($sql){
+    public function queryRow($sql){
         $result=mysqli_query($this->connexion,$sql);
         if($result == true){
             return mysqli_fetch_array($result,MYSQLI_ASSOC);
@@ -17,7 +17,15 @@ class Database{
             return "error";
         }
     }
-    public function query2($sql){
+    public function queryTable($sql){
+        $result=mysqli_query($this->connexion,$sql);
+        if($result == true){
+            return mysqli_fetch_all($result,MYSQLI_ASSOC);
+        }else{
+            return "error";
+        }
+    }
+    public function queryExecute($sql){
         $result=mysqli_query($this->connexion,$sql);
     }
     public function __destruct(){
