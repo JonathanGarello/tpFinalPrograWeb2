@@ -29,6 +29,12 @@ class AdminController
         $username = $_POST["username"];
         $password = $_POST["contra"];
         $darRoles = $this->model->darRol($id,$nombre,$apellido,$username,$password,$rol);
+        $usuariosSinRol["usuarios"] = $this->model->obtenerUsuariosConRolNull();
         echo $this->renderer->render("view/admin.php",$usuariosSinRol);
+    }
+    public function logout()
+    {
+        session_destroy();
+        Header("Location:../");
     }
 }
