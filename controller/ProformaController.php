@@ -23,6 +23,7 @@ class ProformaController
             $numero = $_POST["numero"];
             $fecha = $_POST["fecha"];
             $this->model->guardarProforma($numero, $fecha);
+        }
         if(isset($_POST["denominacion"], $_POST["cuit"], $_POST["telefono"], $_POST["email"], $_POST["contacto1"], $_POST["contacto2"])){
             $denominacion = $_POST["denominacion"];
             $cuit = $_POST["cuit"];
