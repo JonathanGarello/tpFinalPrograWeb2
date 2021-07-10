@@ -49,8 +49,8 @@ class ModuleInitializer
     {
 
         include_once("controller/ProformaController.php");
-        include_once("model/UsuariosModel.php");
-        $model = new UsuariosModel($this->database);
+        include_once("model/ProformaModel.php");
+        $model = new ProformaModel($this->database);
         return new ProformaController($this->renderer,$model);
     }
 

@@ -34,7 +34,7 @@ class RegistrarController
         }else{
             $datos["datos"] =  "Completa todos los campos del registro";
         }
-        $data = $this->model->obtenerUsuariosPorusername($username);
+        $data = $this->model->obtenerUsuariosPorUsername($username);
         if($password == $confirmaPassword){
             if($data == null){
                 $datos["exito"] =  "Usuario Registrado, ";

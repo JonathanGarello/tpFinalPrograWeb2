@@ -32,9 +32,5 @@ class AdminController
         $usuariosSinRol["usuarios"] = $this->model->obtenerUsuariosConRolNull();
         echo $this->renderer->render("view/admin.php",$usuariosSinRol);
     }
-    public function logout()
-    {
-        session_destroy();
-        Header("Location:../");
-    }
+
 }

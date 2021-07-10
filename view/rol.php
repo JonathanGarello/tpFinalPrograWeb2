@@ -1,4 +1,4 @@
-{{> headerAdmin}}
+{{>headerAdmin}}
 {{>navAdmin}}
 <div class="w3-panel">
     <h1>Determine Rol</h1>

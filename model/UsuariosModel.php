@@ -14,7 +14,7 @@ class UsuariosModel{
     public function obtenerUsuariosPorId($id){
         return $this->connexion->queryRow("SELECT * FROM usuarios WHERE id=$id");
     }
-    public function obtenerUsuariosPorusername($username){
+    public function obtenerUsuariosPorUsername($username){
         return $this->connexion->queryRow("SELECT * FROM usuarios WHERE username= '$username'");
     }
     public function validarLogin($username,$password){

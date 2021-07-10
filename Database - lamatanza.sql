@@ -61,7 +61,7 @@ create table costeo  (id bigint primary key not null auto_increment,
                         estimadototal varchar(40));
 
 create table personal  (id smallint primary key not null auto_increment,
-						choferAsigando smallint not null);
+						choferAsigando varchar(40) not null);
                         
 insert into usuarios (`nombre`, `apellido`, `username`, `contra`,`rol`) VALUES
 ('admin', 'admin', 'admin', 'admin', 'admin');
