@@ -40,7 +40,7 @@ class ProformaModel
     }
 
     public function guardarPersonal($choferAsignado){
-        $this->connexion->queryExecute("INSERT INTO personal (choferAsignado) 
+        $this->connexion->queryExecute("INSERT INTO personal (choferAsignado)
                                             VALUES ($choferAsignado)");
     }
 }

@@ -104,7 +104,7 @@ class ProformaController
 
             $this->model->guardarPersonal($choferAsignado);
         }
-        $proforma = "La proforma se cargo con exito.";
-        echo $this->renderer->render("view/login.php", $proforma);
+        $proforma["exito"] = "La proforma se cargo con exito.";
+        echo $this->renderer->render("view/proforma.php", $proforma);
     }
 }
