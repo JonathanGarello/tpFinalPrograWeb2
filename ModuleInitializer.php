@@ -53,6 +53,14 @@ class ModuleInitializer
         $model = new ProformaModel($this->database);
         return new ProformaController($this->renderer,$model);
     }
+    public function createChoferController()
+    {
+
+        include_once("controller/ChoferController.php");
+        include_once("model/ChoferModel.php");
+        $model = new ChoferModel($this->database);
+        return new ChoferController($this->renderer,$model);
+    }
 
     public function createDefaultController()
     {

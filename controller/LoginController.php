@@ -38,7 +38,7 @@
                 }
 
                 if ($data["rol"] == 'chofer') {
-
+                    echo $this->renderer->render("view/chofer.php");
                 }
 
                 if ($data["rol"] == 'supervisor') {
