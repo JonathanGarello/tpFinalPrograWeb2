@@ -7,7 +7,9 @@ create table usuarios  (id bigint primary key not null auto_increment,
 						apellido varchar(40) ,
 						username varchar(40),
 						contra varchar(40),
-						rol varchar(40));
+						rol varchar(40),
+                        idConfirmacion varchar(20) not null,
+                        email varchar(30) not null);
 
 create table proforma  (id bigint primary key not null auto_increment,
 						numero smallint not null,
@@ -63,5 +65,5 @@ create table costeo  (id bigint primary key not null auto_increment,
 create table personal  (id smallint primary key not null auto_increment,
 						choferAsigando varchar(40) not null);
                         
-insert into usuarios (`nombre`, `apellido`, `username`, `contra`,`rol`) VALUES
-('admin', 'admin', 'admin', 'admin', 'admin');
+insert into usuarios (`nombre`, `apellido`, `username`, `contra`,`rol`, `idConfirmacion`, `email`) VALUES
+('admin', 'admin', 'admin', 'admin', 'admin', 'admin', 'admin@admin.com');

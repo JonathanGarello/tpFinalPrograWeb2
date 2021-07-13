@@ -1,6 +1,7 @@
 <?php
 
 class Router{
+
     public static function executeActionFromController($moduleInitializer, $module, $action){
         $controller = self::createControllerFrom($moduleInitializer, $module);
         self::executeActionFrom($controller, $action);
