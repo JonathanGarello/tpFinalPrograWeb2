@@ -63,4 +63,14 @@ class UsuariosModel{
     {
         return $this->connexion->queryRow("SELECT username FROM usuarios WHERE codigo = '$codigo'");
     }
+
+    public function actualizarValidarPorCodigo($codigo, $validar){
+        $this->connexion->queryExecute("UPDATE usuarios SET validar ='$validar' WHERE codigo='$codigo'");
+    }
+
+    public function obtenerValidarPorUsername($username)
+    {
+        return $this->connexion->queryRow("SELECT validar FROM usuarios WHERE username = '$username'");
+    }
+
 }

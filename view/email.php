@@ -19,6 +19,7 @@
                 {{username}}, ahora debes esperar que tu administrador te asigne un rol para poder ingresar a la app.</p>
 
             <p class="w3-opacity">Muchas gracias.</p>
+            <a href="login/index">Ir a login</a>
             {{/username}}
         </div>
 

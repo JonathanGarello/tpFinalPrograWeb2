@@ -28,11 +28,12 @@ create table usuarios  (id bigint primary key not null auto_increment,
 						contra varchar(40),
 						rol varchar(40),
 						codigo varchar(40),
-						email varchar(40)
+						email varchar(40),
+                        validar varchar(20)
                         );
 
 
 						
                         
-insert into usuarios (`nombre`, `apellido`, `username`, `contra`,`rol`, `codigo`, `email`) VALUES
-('admin', 'admin', 'admin', 'admin', 'admin', 'admin', 'admin@admin.com');
+insert into usuarios (`nombre`, `apellido`, `username`, `contra`,`rol`, `codigo`, `email`, `validar` ) VALUES
+('admin', 'admin', 'admin', 'admin', 'admin', 'admin', 'admin@admin.com', 'si');
