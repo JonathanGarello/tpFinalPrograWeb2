@@ -15,6 +15,24 @@
             echo $this->renderer->render("view/login.php");
         }
 
+        /*public function ingresarCodigo()
+        {
+            echo $this->renderer->render("view/codigo.php");
+        }*/
+
+       /* public function validarCuenta(){
+            $codigo = $_POST["codigo"];
+            $datos = $this->model->ObteberUsurnamePorCodigo($codigo);
+            if($datos != null){
+                echo $this->renderer->render("view/email.php", $datos);
+                return true;
+            }
+            else{
+                $datos["error"] = "Código invalido";
+                echo $this->renderer->render("view/codigo.php", $datos);
+            }
+        }*/
+
         public function procesarLogin()
         {
             $username = "";

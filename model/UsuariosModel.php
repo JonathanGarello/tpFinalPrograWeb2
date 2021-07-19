@@ -34,8 +34,8 @@ class UsuariosModel{
     {
         return $this->connexion->queryRow("SELECT id FROM usuarios WHERE username = '$username'");
     }
-    public function registrarUsuario($nombre, $apellido, $username,$password){
-        $this->connexion->queryExecute("INSERT INTO usuarios (nombre, apellido, username, contra, rol) VALUES ('$nombre', '$apellido', '$username', '$password', 'null')");
+    public function registrarUsuario($nombre, $apellido, $username,$password, $codigo, $email){
+        $this->connexion->queryExecute("INSERT INTO usuarios (nombre, apellido, username, contra, rol, codigo, email) VALUES ('$nombre', '$apellido', '$username', '$password', 'null', '$codigo', '$email')");
     }
     public function obtenerUsuariosConRolNull(){
         return $this->connexion->queryTable("SELECT * FROM usuarios WHERE rol= 'null'");
@@ -59,4 +59,8 @@ class UsuariosModel{
         $this->connexion->queryExecute("UPDATE viaje SET importe='$importe', varios='$varios',kilometros='$kilo', peaje='$peaje' WHERE id='$id'");
     }
 
+    public function ObteberUserNamePorCodigo($codigo)
+    {
+        return $this->connexion->queryRow("SELECT username FROM usuarios WHERE codigo = '$codigo'");
+    }
 }
