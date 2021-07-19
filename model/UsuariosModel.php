@@ -53,10 +53,10 @@ class UsuariosModel{
         return $this->connexion->queryRow("SELECT * FROM viaje WHERE idchofer= '$id'");
     }
     public function CrearViaje($ori,$des,$id){
-        $this->connexion->queryExecute("INSERT INTO viaje (origen, destino, idchofer,importeChofer,varios,kilometros,peaje) VALUES ('$ori', '$des', '$id',null,null,null,null)");
+        $this->connexion->queryExecute("INSERT INTO viaje (origen, destino, idchofer,realTotal,realFree,realReefer,realHazard,realPeajes,realViaticos,realEta,realEtd,realCombustible,realKm) VALUES ('$ori', '$des', '$id',0,0,0,0,0,0,0,0,0,0)");
     }
-    public function CargarCostos($importe,$varios,$id,$kilo,$peaje){
-        $this->connexion->queryExecute("UPDATE viaje SET importe='$importe', varios='$varios',kilometros='$kilo', peaje='$peaje' WHERE id='$id'");
+    public function CargarCostos($realCombustible,$realPeajes, $realTotal,$realKm,$realViaticos,$id){
+        $this->connexion->queryExecute("UPDATE viaje SET realTotal='$realTotal', realPeajes='$realPeajes',realViaticos='$realViaticos', realCombustible='$realCombustible', realKm='$realKm' WHERE id='$id'");
     }
 
     public function ObteberUserNamePorCodigo($codigo)

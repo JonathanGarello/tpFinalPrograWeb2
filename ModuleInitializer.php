@@ -45,13 +45,6 @@ class ModuleInitializer
         return new AdminController($this->renderer,$model);
     }
 
-    public function createViajeController()
-    {
-        include_once("controller/ViajeController.php");
-        include_once("model/ViajeModel.php");
-        $model = new ViajeModel($this->database);
-        return new ViajeController($this->renderer,$model);
-    }
     public function createDefaultController()
     {
         return $this->createLoginController();

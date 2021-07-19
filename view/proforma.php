@@ -79,12 +79,12 @@
                         <label>Estimado:</label>
                         <input class="w3-input" style="width:100%;" type="number" required name="estimadoKm"> <br>
                         <label>Real:</label>
-                        <input class="w3-input" style="width:100%;" type="number" required name="realKm"> <br>
+                        <input class="w3-input" value="{{realKm}}" style="width:100%;" type="number" required name="realKm"> <br>
                         <label>Combustible:</label> <br><br>
                         <label>Estimado:</label>
                         <input class="w3-input" style="width:100%;" type="text" required name="estimadoCombustible"> <br>
                         <label>Real:</label>
-                        <input value={{importeChofer}} class="w3-input" style="width:100%;" type="text" required name="realCombustible"> <br>
+                        <input value={{realCombustible}} class="w3-input" style="width:100%;" type="text" required name="realCombustible"> <br>
                         <label>ETD:</label> <br><br>
                         <label>Estimado:</label>
                         <input class="w3-input" style="width:100%;" type="number" required name="estimadoEtd"> <br>
@@ -99,12 +99,12 @@
                         <label>Estimado:</label>
                         <input class="w3-input" style="width:100%;" type="number" required name="estimadoViaticos"> <br>
                         <label>Real:</label>
-                        <input value={{varios}} class="w3-input" style="width:100%;" type="number" required name="realViaticos"> <br>
+                        <input value={{realViaticos}} class="w3-input" style="width:100%;" type="number" required name="realViaticos"> <br>
                         <label>Peajes y pasajes:</label> <br><br>
                         <label>Estimado:</label>
                         <input class="w3-input" style="width:100%;" type="number" required name="estimadoPasajes"> <br>
                         <label>Real:</label>
-                        <input class="w3-input" style="width:100%;" type="number" required name="realPasajes"> <br>
+                        <input value="{{realPeajes}}" class="w3-input" style="width:100%;" type="number" required name="realPasajes"> <br>
                         <label>Extras:</label> <br><br>
                         <label>Estimado:</label>
                         <input class="w3-input" style="width:100%;" type="number" required name="estimadoExtras"> <br>
@@ -129,7 +129,7 @@
                         <label>Estimado:</label>
                         <input class="w3-input" style="width:100%;" type="number" required name="estimadoTotal"> <br>
                         <label>Real:</label>
-                        <input class="w3-input" style="width:100%;" type="number" required name="realTotal">
+                        <input value="{{realTotal}}" class="w3-input" style="width:100%;" type="number" required name="realTotal">
                     </div>
                     <br>
                     <div class="w3-section">

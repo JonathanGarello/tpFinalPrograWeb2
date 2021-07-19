@@ -3,6 +3,9 @@ create database lamatanza;
 use lamatanza;
 
 create table viaje  (id bigint primary key not null auto_increment,
+                     origen varchar(40),
+                     destino varchar(40),
+                     idchofer bigint,
 					latitud varchar(40),
                     longitud varchar(40),
                     realTotal integer,

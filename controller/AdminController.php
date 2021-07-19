@@ -53,9 +53,8 @@ class AdminController
         $id = $_POST["id"];
         $ori = $_POST["origen"];
         $des =  $_POST["destino"];
-        if($this->model->CrearViaje($ori,$des,$id)){
-            echo $this->renderer->render("view/admin.php");
-        }
+        $this->model->CrearViaje($ori,$des,$id);
+
         echo $this->renderer->render("view/admin.php");
     }
 
@@ -74,14 +73,14 @@ class AdminController
         $id = $_POST["id"];
         $lat = $_POST["lat"];
         $lng = $_POST["lon"];
-        $carga = $_POST["carga"];
+        $realCombustible = $_POST["carga"];
         $lugar = $_POST["lugar"];
-        $peaje = $_POST["cantidad"];
-        $importe = $_POST["importe"];
-        $kilometros = $_POST["kilometros"];
-        $varios = $_POST["varios"];
+        $realPeajes = $_POST["cantidad"];
+        $realTotal = $_POST["importe"];
+        $realKm = $_POST["kilometros"];
+        $realViaticos = $_POST["varios"];
 
-        if($this->model->CargarCostos($importe,$varios,$id,$kilometros,$peaje)){
+        if($this->model->CargarCostos($realCombustible,$realPeajes, $realTotal,$realKm,$realViaticos,$id)){
             echo $this->renderer->render("view/chofer.php");
         }
        echo $this->renderer->render("view/chofer.php");
