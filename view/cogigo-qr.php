@@ -5,7 +5,7 @@
     {{#qr}}
     <div class="w3-table w3-striped w3-white">
 
-        {{qr}}
+        <img src="{{qr}}" alt="">
 
     </div>
     {{/qr}}

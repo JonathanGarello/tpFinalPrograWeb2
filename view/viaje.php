@@ -11,6 +11,5 @@
         </tr>
         {{/usuarios}}
     </table>
-</form> 
 </div>
 {{>footerAdmin}}

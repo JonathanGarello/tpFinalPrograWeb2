@@ -79,7 +79,7 @@ class RegistrarController
     private function enviarEmail($email, $codigo,$nombre)
     {
         $to = $email;
-        $url = '<a href="localhost/registrar/validarCuenta/codigo= '. $codigo . '">enlace</a>';
+        $url = '<a href="localhost/registrar/validarCuenta/codigo='. $codigo . '">enlace</a>';
         $subject = 'Validacion de email';
         $message = $nombre . ' gracias por registrarte!
                    Su cuenta ha sido creada, tu codigo de activacion es: ' . $codigo .

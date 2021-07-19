@@ -1,5 +1,5 @@
 <?php
-
+require "codigoQR/phpqrcode/qrlib.php";
 class AdminController
 {
     private $renderer;
@@ -34,6 +34,7 @@ class AdminController
     }
 
     public function viajes(){
+
         $usuariosSinRol["usuarios"] = $this->model->obtenerUsuariosConRolChofer();
         echo $this->renderer->render("view/viaje.php",$usuariosSinRol);
     }
@@ -54,8 +55,9 @@ class AdminController
         $ori = $_POST["origen"];
         $des =  $_POST["destino"];
         $this->model->CrearViaje($ori,$des,$id);
-
-        echo $this->renderer->render("view/admin.php");
+        $urlChofer = 'http://localhost/admin/cargarDatos/id=' . $id ;
+        $data["qr"] = 'codigoQR/imgQR/QRtest.png' ;//$this->crearQR($urlChofer);
+        echo $this->renderer->render("view/codigo-qr.php", $data);
     }
 
     public function cargas(){
@@ -87,4 +89,18 @@ class AdminController
 
     }
 
+    private function crearQR($urlChofer){
+        $dir = 'codigoQR/imgQR/';
+        if (!file_exists($dir)) {
+            mkdir($dir);
+        }
+        $filename = 'codigoQR/imgQR/QRtest.png';
+        $tamaño = 10; //Tamaño de Pixel
+        $level = 'M'; //Precisión Media
+        $framSize = 3; //Tamaño en blanco
+        $contenido = $urlChofer;
+        QRcode::png($contenido, $filename, $level, $tamaño, $framSize);
+        $data = $filename;
+        return $data;
+    }
 }
