@@ -9,10 +9,11 @@
                     {{/exito}}
                 <p class="w3-opacity">REGISTRO DE DATOS</p>
                 <form class="w3-container w3-card w3-padding-32 w3-white" action="proforma/validarProforma"  method = "POST">
+                    {{#viaje}}
                     <div class="w3-section">
                         <h3>Proforma</h3><br><br>
                         <label>Número: </label>
-                        <input class="w3-input" style="width:100%;" type="number" required name="numero"><br>
+                        <input class="w3-input" value={{id}} style="width:100%;" type="number" required name="numero"><br>
                         <label>Fecha: </label>
                         <input class="w3-input" style="width:100%;" type="date" required name="fecha">
                     </div>
@@ -36,9 +37,9 @@
                     <div class="w3-section">
                         <h3>Viaje</h3><br><br>
                         <label>Origen:</label>
-                        <input class="w3-input" style="width:100%;" type="text" required name="origen"><br>
+                        <input value={{origen}} class="w3-input" style="width:100%;" type="text" required name="origen"><br>
                         <label>Destino:</label>
-                        <input class="w3-input" style="width:100%;" type="text" required name="destino"><br>
+                        <input value={{destino}} class="w3-input" style="width:100%;" type="text" required name="destino"><br>
                         <label>Fecha de carga:</label>
                         <input class="w3-input" style="width:100%;" type="date" required name="fechaCarga"><br>
                         <label>ETA:</label>
@@ -83,7 +84,7 @@
                         <label>Estimado:</label>
                         <input class="w3-input" style="width:100%;" type="text" required name="estimadoCombustible"> <br>
                         <label>Real:</label>
-                        <input class="w3-input" style="width:100%;" type="text" required name="realCombustible"> <br>
+                        <input value={{importeChofer}} class="w3-input" style="width:100%;" type="text" required name="realCombustible"> <br>
                         <label>ETD:</label> <br><br>
                         <label>Estimado:</label>
                         <input class="w3-input" style="width:100%;" type="number" required name="estimadoEtd"> <br>
@@ -98,7 +99,7 @@
                         <label>Estimado:</label>
                         <input class="w3-input" style="width:100%;" type="number" required name="estimadoViaticos"> <br>
                         <label>Real:</label>
-                        <input class="w3-input" style="width:100%;" type="number" required name="realViaticos"> <br>
+                        <input value={{varios}} class="w3-input" style="width:100%;" type="number" required name="realViaticos"> <br>
                         <label>Peajes y pasajes:</label> <br><br>
                         <label>Estimado:</label>
                         <input class="w3-input" style="width:100%;" type="number" required name="estimadoPasajes"> <br>
@@ -133,10 +134,11 @@
                     <br>
                     <div class="w3-section">
                         <h3>Personal:</h3> <br>
-                        <label>Chofer asignado:</label>
-                        <input class="w3-input" style="width:100%;" type="number" required name="choferAsignado">
+                        <label>Chofer asignado id:</label>
+                        <input value={{idchofer}} class="w3-input" style="width:100%;" type="number" required name="choferAsignado">
                     </div>
                     <button type="submit" class="w3-button w3-teal w3-right">Registrarme</button>
+                    {{/viaje}}
                 </form>
 
 {{>footerAdmin}}

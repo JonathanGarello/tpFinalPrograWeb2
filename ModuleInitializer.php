@@ -45,23 +45,13 @@ class ModuleInitializer
         return new AdminController($this->renderer,$model);
     }
 
-    public function createProformaController()
+    public function createViajeController()
     {
-
-        include_once("controller/ProformaController.php");
-        include_once("model/ProformaModel.php");
-        $model = new ProformaModel($this->database);
-        return new ProformaController($this->renderer,$model);
+        include_once("controller/ViajeController.php");
+        include_once("model/ViajeModel.php");
+        $model = new ViajeModel($this->database);
+        return new ViajeController($this->renderer,$model);
     }
-    public function createChoferController()
-    {
-
-        include_once("controller/ChoferController.php");
-        include_once("model/ChoferModel.php");
-        $model = new ChoferModel($this->database);
-        return new ChoferController($this->renderer,$model);
-    }
-
     public function createDefaultController()
     {
         return $this->createLoginController();

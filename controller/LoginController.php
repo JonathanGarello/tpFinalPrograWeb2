@@ -38,7 +38,9 @@
                 }
 
                 if ($data["rol"] == 'chofer') {
-                    echo $this->renderer->render("view/chofer.php");
+                    $idChofer = $this->model->obtenerIdDelUsuario($_POST["loginNombre"]);
+                    $datas["activos"] = $this->model->obtenerViajePorIdDeChofer($idChofer["id"]);
+                    echo $this->renderer->render("view/chofer.php",$datas);
                 }
 
                 if ($data["rol"] == 'supervisor') {

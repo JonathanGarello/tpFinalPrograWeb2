@@ -11,6 +11,12 @@ class UsuariosModel{
     public function obtenerUsuarios(){
         return $this->connexion->queryRow("SELECT * FROM usuarios");
     }
+    public function obtenerViajes(){
+        return $this->connexion->queryTable("SELECT * FROM viaje");
+    }
+    public function obtenerViajePorIdDeChofer($id){
+        return $this->connexion->queryTable("SELECT * FROM viaje WHERE idchofer=$id");
+    }
     public function obtenerUsuariosPorId($id){
         return $this->connexion->queryRow("SELECT * FROM usuarios WHERE id=$id");
     }
@@ -24,13 +30,33 @@ class UsuariosModel{
     {
         return $this->connexion->queryRow("SELECT rol FROM usuarios WHERE username = '$username'");
     }
+    public function obtenerIdDelUsuario($username)
+    {
+        return $this->connexion->queryRow("SELECT id FROM usuarios WHERE username = '$username'");
+    }
     public function registrarUsuario($nombre, $apellido, $username,$password){
         $this->connexion->queryExecute("INSERT INTO usuarios (nombre, apellido, username, contra, rol) VALUES ('$nombre', '$apellido', '$username', '$password', 'null')");
     }
     public function obtenerUsuariosConRolNull(){
         return $this->connexion->queryTable("SELECT * FROM usuarios WHERE rol= 'null'");
     }
+    public function obtenerUsuariosConRolChofer(){
+        return $this->connexion->queryTable("SELECT * FROM usuarios WHERE rol= 'chofer'");
+    }
     public function darRol($id,$nombre,$apellido,$username,$contra,$rol){
         $this->connexion->queryExecute("UPDATE usuarios SET nombre='$nombre',apellido='$apellido',username='$username', contra='$contra', rol='$rol' WHERE id='$id'");
     }
+    public function obtenerViajePorId($id){
+        return $this->connexion->queryRow("SELECT * FROM viaje WHERE id=$id");
+    }
+    public function obtenerViajePorIdChofer($id){
+        return $this->connexion->queryRow("SELECT * FROM viaje WHERE idchofer= '$id'");
+    }
+    public function CrearViaje($ori,$des,$id){
+        $this->connexion->queryExecute("INSERT INTO viaje (origen, destino, idchofer,importeChofer,varios,kilometros,peaje) VALUES ('$ori', '$des', '$id',null,null,null,null)");
+    }
+    public function CargarCostos($importe,$varios,$id,$kilo,$peaje){
+        $this->connexion->queryExecute("UPDATE viaje SET importe='$importe', varios='$varios',kilometros='$kilo', peaje='$peaje' WHERE id='$id'");
+    }
+
 }
