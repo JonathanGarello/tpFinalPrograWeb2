@@ -26,7 +26,8 @@ class Database{
         }
     }
     public function queryExecute($sql){
-        $result=mysqli_query($this->connexion,$sql);
+        mysqli_query($this->connexion,$sql);
+
     }
     public function __destruct(){
         mysqli_close($this->connexion);

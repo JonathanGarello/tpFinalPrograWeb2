@@ -1,12 +1,12 @@
 {{>headerLogin}}
 <div class="w3-row" id="contact">
-    <div class="w3-half w3-indigo w3-container " style="height:700px">
-        <div class="w3-padding-64 w3-padding-large">
+    <div class="w3-half w3-indigo w3-container " style="height:750px">
+        <div class="w3-padding-16 w3-padding-large">
             <h1>Transportes La Matanza</h1>
         </div>
     </div>
-    <div class="w3-half w3-teal w3-container" style="height:700px">
-        <div class="w3-padding-64 w3-padding-large">
+    <div class="w3-half w3-teal w3-container" style="height:750px">
+        <div class="w3-padding-16 w3-padding-large">
             <h1>Login</h1>
             <p class="w3-opacity">INGRESO DE DATOS</p>
             <form class="w3-container w3-card w3-padding-32 w3-white" action="login/procesarLogin"  method = "POST">

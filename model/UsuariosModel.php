@@ -24,8 +24,9 @@ class UsuariosModel{
     {
         return $this->connexion->queryRow("SELECT rol FROM usuarios WHERE username = '$username'");
     }
-    public function registrarUsuario($nombre, $apellido, $username,$password){
-        $this->connexion->queryExecute("INSERT INTO usuarios (nombre, apellido, username, contra, rol) VALUES ('$nombre', '$apellido', '$username', '$password', 'null')");
+    public function registrarUsuario($nombre, $apellido, $username,$password, $enlace, $email){
+        $this->connexion->queryExecute("INSERT INTO usuarios (nombre, apellido, username, contra, rol, enlace, email)
+        VALUES ('$nombre', '$apellido', '$username', '$password', 'null', '$enlace', '$email')");
     }
     public function obtenerUsuariosConRolNull(){
         return $this->connexion->queryTable("SELECT * FROM usuarios WHERE rol= 'null'");

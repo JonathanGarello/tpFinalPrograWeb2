@@ -1,24 +1,23 @@
 <?php
 
 class Router{
-
-    public static function executeActionFromController($moduleInitializer, $module, $action){
-        $controller = self::createControllerFrom($moduleInitializer, $module);
-        self::executeActionFrom($controller, $action);
+    public function executeActionFromController($moduleInitializer, $module, $action){
+        $controller = $this->createControllerFrom($moduleInitializer, $module);
+        $this->executeActionFrom($controller, $action);
     }
 
-    private static function createControllerFrom($moduleInitializer,$module){
-        $controllerName = self::createControllerNameFromModule($module);
+    private function createControllerFrom($moduleInitializer,$module){
+        $controllerName = $this->createControllerNameFromModule($module);
         $validController = method_exists($moduleInitializer, $controllerName) ? $controllerName : "createDefaultController";
         $controller = call_user_func(array($moduleInitializer, $validController));
         return $controller;
     }
 
-    private static  function createControllerNameFromModule($module){
+    private function createControllerNameFromModule($module){
         return "create" . ucfirst($module) . "Controller";
     }
 
-    private static function executeActionFrom($controller, $action){
+    private function executeActionFrom($controller, $action){
         $validAction = method_exists($controller, $action) ? $action : "index";
         call_user_func(array($controller, $validAction));
     }
